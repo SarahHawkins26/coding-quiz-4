@@ -6,7 +6,7 @@ var initialText = document.getElementById('initials');
 
 //select all elements
 var start = document.getElementById('startQuiz');
-var quiz =document.getElementById('quiz');
+//var quiz =document.getElementById('quiz');
 var question = document.getElementById('question');
 var choiceA = document.getElementById('A');
 var choiceB = document.getElementById('B');
@@ -89,7 +89,7 @@ startbtnEl.addEventListener('click', startQuiz);
     //start quiz
     function startQuiz(){
    renderQuestion();
-    quiz.style.display = 'block';
+    //quiz.style.display = 'block';
     renderProgress();
     startbtnEl.style.display = 'none';
     titleContain.style.display = 'none';
@@ -101,6 +101,7 @@ startbtnEl.addEventListener('click', startQuiz);
             score++;
             alert = 'Correct!'; 
         }else{
+            timeLeft-=10;
             alert = "Incorrect!";
         }
         if(currentQuestionIndex < lastQuestionIndex){
@@ -116,13 +117,14 @@ startbtnEl.addEventListener('click', startQuiz);
 //start timer
 function startTimer(){
    timer = setInterval(function(){
-       timeLeft--;
+       //timeLeft--;
        timerElement.textContent = timeLeft;
        if (timeLeft <=0){
            clearInterval(timer);
            endQuiz();
        }else{
-        answerIsWrong()
+        timeLeft--
+        //answerIsWrong()
        }
    }, 1000);
 }
@@ -132,17 +134,20 @@ function endQuiz(){
     clearInterval(timer);
     timerElement.textContent = 0;
     // choicesElement.innerHTML = ('display, hide');
-    questionElement.textContent = 'Quiz Complete!';
+    question.textContent = 'Quiz Complete!';
     submitForm.style.display = 'block';
     initialText.focus();
 }
 
-submitForm.addEventListener('submit', event =>{
+submitForm.addEventListener('click', event =>{
     event.preventDefault();
     var initials = initialText.value.trim();
     if (initials !== ''){
-        var score = time;
-        window.localStorage.setItem(initials,score);
+        var score = timer;
+        var highscores = window.localStorage.getItem('highscores') ? JSON.parse(window.localStorage.getItem('highscores')) : []
+        highscores.push({initials, score})
+        window.localStorage.setItem('highscores', JSON.stringify(highscores));
+
         window.location.href = 'highscores.html';
     }
 })
