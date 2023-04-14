@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./assets/style.css">
+        <link rel='stylesheet' href="./assets/question1.html">
+        <link rel='stylesheet' href="./assets/question2.html">
+        <link rel='stylesheet' href="./assets/question3.html">
+        <link rel='stylesheet' href="./assets/question4.html">
+        <link rel='stylesheet' href="./assets/question5.html">
+        <link rel="stylesheet" href="./assets/highscores.html">
+        <title>Coding Trivia</title>
+    </head>
+
+    <body>
+        <header>
+            <a href="./assets/highscores.html">High Scores</a>
+            <p> 
+              Time: <span id="timer">50</span>
+              </p>
+        </header>
+        <div id="container">
+          <button id="start-btn">Start Random Quiz!</button>
+        </div>
+
+        <section class='title-container'>
+          <h1>Coding Quiz</h1>
+        </section>
+        <div id="question">
+          <p> Question </p>
+        </div>
+        <div id="choices">
+          <div class="choice" id="A" onclick="checkAnswer('A')">A</div>
+          <div class="choice" id="B" onclick="checkAnswer('B')">B</div>
+          <div class="choice" id="C" onclick="checkAnswer('C')">C</div>
+          <div class="choice" id="D" onclick="checkAnswer('D')">D</div>
+        </div>
+        
+        <div id="score" style="display: none;"></div>
+        <div id="progress" class='prog'></div>
+
+        <main>
+
+     
+        
+
+
+      
+
+
+            <form id="submit-form">
+                <input type="text" id="initials" placeholder="Enter Initials">
+                <button id="submit-btn">Submit Score</button>
+            </form>
+            
+
+
+        
+        </main>
+        <footer>
+
+        </footer>
+        <script src="./assets/script.js"></script>
+    </body>
+</html>
