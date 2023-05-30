@@ -77,11 +77,6 @@ var timeLeft = 50;
         choiceD.innerHTML = q.choiceD;
     }
     
-    function renderProgress(){
-        for (var qIndex = 0; qIndex <= lastQuestionIndex; qIndex++){
-            progress.innerHTML += "<div class='prog' id=" + qIndex + "></div>";
-        }
-    }
 
 startbtnEl.addEventListener('click', startQuiz); 
 
@@ -89,11 +84,22 @@ startbtnEl.addEventListener('click', startQuiz);
     //start quiz
     function startQuiz(){
    renderQuestion();
-    //quiz.style.display = 'block';
-    renderProgress();
+    countdown();
     startbtnEl.style.display = 'none';
     titleContain.style.display = 'none';
     startTimer();
+}
+
+function countdown (){
+    function renderQuestion(){
+        var q = questions[currentQuestionIndex];
+        question.innerHTML = '<p>' + q.question + '</p>';
+        choiceA.innerHTML = q.choiceA;
+        choiceB.innerHTML = q.choiceB;
+        choiceC.innerHTML = q.choiceC;
+        choiceD.innerHTML = q.choiceD;
+    }
+
 }
     function checkAnswer(answer){
         if(answer == questions[currentQuestionIndex].correctAnswer){
