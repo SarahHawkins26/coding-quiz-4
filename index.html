@@ -1,52 +1,44 @@
 <!DOCTYPE html>
 <html lang="UTF-8">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <link rel="stylesheet" href="./assets/highscores.html">
-        <title>Coding Trivia</title>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/highscores.html" />
+    <title>Coding Trivia</title>
+  </head>
 
-    <body>
-        <header>
-            <a href="./highscores.html">High Scores</a>
-            <p> 
-              Time: <span id="timer">50</span>
-              </p>
-        </header>
-        <div id="container">
-          <button id="start-btn">Start Random Quiz!</button>
-        </div>
+  <body>
+    <header>
+      <a href="./highscores.html">High Scores</a>
+      <p>Time: <span id="timer">50</span></p>
+    </header>
+    <div id="container">
+      <button id="start-btn">Start Random Quiz!</button>
+    </div>
 
-        <section class='title-container'>
-          <h1>Coding Quiz</h1>
-        </section>
-        <div id="question">
-          <p>  </p>
-        </div>
-        <div id="choices">
-          <button class="choice" id="A" onclick="checkAnswer('A')">A</button>
-          <button class="choice" id="B" onclick="checkAnswer('B')">B</button>
-          <button class="choice" id="C" onclick="checkAnswer('C')">C</button>
-          <button class="choice" id="D" onclick="checkAnswer('D')">D</button>
-        </div>
-        
-        <div id="score" style="display: none;"></div>
-        <div id="progress" class='prog'></div>
+    <section class="title-container">
+      <h1>Coding Quiz</h1>
+    </section>
+    <div id="question">
+      <p></p>
+    </div>
+    <div id="choices">
+      <button class="choice" id="A" onclick="checkAnswer('A')">A</button>
+      <button class="choice" id="B" onclick="checkAnswer('B')">B</button>
+      <button class="choice" id="C" onclick="checkAnswer('C')">C</button>
+      <button class="choice" id="D" onclick="checkAnswer('D')">D</button>
+    </div>
 
-        <main>
+    <div id="score" style="display: none"></div>
+    <div id="progress" class="prog"></div>
 
-
-            <form id="submit-form">
-                <input type="text" id="initials" placeholder="Enter Initials">
-                <button id="submit-btn">Submit Score</button>
-            </form>
-            
-        
-        </main>
-        <footer>
-
-        </footer>
-        <script src="./assets/js/script.js"></script>
-    </body>
+    <main>
+      <form id="submit-form">
+        <input type="text" id="initials" placeholder="Enter Initials" />
+        <button id="submit-btn">Submit Score</button>
+      </form>
+    </main>
+    <footer></footer>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
